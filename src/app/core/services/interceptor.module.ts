@@ -18,7 +18,8 @@ export class HttpsRequestInterceptor implements HttpInterceptor {
     ): Observable<HttpEvent<any>> {
         // let access_token = Cookie.get('access_token');
         let access_token = localStorage.getItem('access_token');
-        const baseUrl = 'http://localhost:8080/';
+        //const baseUrl = 'http://localhost:8080/';
+        const baseUrl = 'https://www.4traders.com.br:8080/';
         const url = req.url;
 
         if(req.url.indexOf('cadastropf') != -1) {
