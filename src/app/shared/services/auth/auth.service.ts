@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {LoginResponse} from '../../../pages/security/login/login-response';
+import {catchError, map} from 'rxjs/operators';
 
 @Injectable()
 export class AuthService {
@@ -11,21 +12,29 @@ export class AuthService {
     constructor(private http: HttpClient,private route: ActivatedRoute, private router: Router) {
     }
 
-    signinUser(email: string, senha: string){
-        return this.http.post<LoginResponse>('cadastropf/api/auth', {
-            "email": email,
-            "password": senha
-        }).subscribe((data) => {
-                this.token = data.token;
-                localStorage.setItem('access_token', this.token);
-            },
-            response => {
-                this.hiddenErrorMessage = false;
-            },
-            () => {
-                this.router.navigate(['pessoas']);
-            });
-    }
+
+  signinUser(email: string, senha: string) : Observable<LoginResponse>{
+    return this.http.post<LoginResponse>('cadastropf/api/auth', {
+      "email": email,
+      "password": senha
+    });
+  }
+
+    // signinUser(email: string, senha: string){
+    //     return this.http.post<LoginResponse>('cadastropf/api/auth', {
+    //         "email": email,
+    //         "password": senha
+    //     }).subscribe((data) => {
+    //             this.token = data.token;
+    //             localStorage.setItem('access_token', this.token);
+    //         },
+    //         response => {
+    //             this.hiddenErrorMessage = false;
+    //         },
+    //         () => {
+    //             this.router.navigate(['pessoas']);
+    //         });
+    // }
 
     logout() {
         localStorage.removeItem('access_token');
