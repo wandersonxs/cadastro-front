@@ -33,12 +33,6 @@ export class LoginPageComponent implements  OnInit {
             this.router.navigate(['/pessoas']);
         }
     }
-
-    // On submit button click
-    // onSubmit() {
-       //  this.authService.signinUser(this.inputEmail, this.inputPass);
-    // }
-
    onSubmit() {
     this.authService.signinUser(this.inputEmail, this.inputPass)
       .subscribe((data) => {
@@ -52,14 +46,5 @@ export class LoginPageComponent implements  OnInit {
           this.router.navigate(['pessoas']);
         });
   }
-    // On Forgot password link click
-    onForgotPassword() {
-        this.router.navigate(['/forgotpassword']);
-    }
-    // On registration link click
-    onRegister() {
-        this.router.navigate(['/register']);
-    }
-
 
 }

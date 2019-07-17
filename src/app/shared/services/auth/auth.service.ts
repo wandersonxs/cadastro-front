@@ -55,4 +55,17 @@ export class AuthService {
             return false;
         }
     }
+
+  /**
+   * @@TODO: Refactory isAuthenticated and remove isLogged method. It's duplicated.
+   *  Wanderson Xesquevixos de Siqueira
+   */
+  isLogged() {
+    this.token = localStorage.getItem('access_token');
+    if (this.token != null) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
