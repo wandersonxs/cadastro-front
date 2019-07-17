@@ -11,15 +11,6 @@ import {PessoaService} from '../shared/pessoa.service';
 })
 export class PessoaFormComponent extends BaseResourceFormComponent<Pessoa> implements  OnInit {
 
-  iMaskConfig = {
-    mask: Number,
-    scale: 2,
-    thousandSeparator: '',
-    padFractionalZeros: true,
-    normalizeZeros: true,
-    radix: ','
-  };
-
   ptBR = {
     firstDayOfWeek: 0,
     dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
@@ -42,7 +33,6 @@ export class PessoaFormComponent extends BaseResourceFormComponent<Pessoa> imple
   }
 
   ngOnInit() {
-    //this.loadCategories();
     super.ngOnInit();
   }
 

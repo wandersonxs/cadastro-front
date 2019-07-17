@@ -68,9 +68,9 @@
         </div>
 
         <!--Sexo-->
-        <!--
+
         <div class="form-group col-md-6">
-          <label for="sexo">Sexo</label>
+          <label for="sexo">Sexo/Gênero</label>
           <select type="text" class="form-control" id="sexo" formControlName="sexo">
             <option  *ngFor="let option of typeOptions" [value]="option.value"> {{ option.text }}</option>
           </select>
@@ -78,15 +78,15 @@
             [form-control]="resourceForm.get('sexo')"
           ></app-form-field-error>
         </div>
-        -->
-        <!--Naturalidade-->
-        <div class="form-group col-md-6">
-          <label for="sexo">sexo</label>
-          <input type="text" class="form-control" id="sexo" formControlName="sexo">
-          <app-form-field-error
-            [form-control]="resourceForm.get('sexo')"
-          ></app-form-field-error>
-        </div>
+
+        <!--Sexo-->
+        <!--<div class="form-group col-md-6">-->
+          <!--<label for="sexo">sexo</label>-->
+          <!--<input type="text" class="form-control" id="sexo" formControlName="sexo">-->
+          <!--<app-form-field-error-->
+            <!--[form-control]="resourceForm.get('sexo')"-->
+          <!--&gt;</app-form-field-error>-->
+        <!--</div>-->
 
         <!--Naturalidade-->
         <div class="form-group col-md-6">

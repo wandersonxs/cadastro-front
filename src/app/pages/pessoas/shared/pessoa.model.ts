@@ -16,9 +16,9 @@ export class Pessoa extends BaseResourceModel{
   }
 
   static types =  {
-    masculino: 'M',
-    feminino: 'F',
-    outros: 'O'
+    M: 'MASCULINO',
+    F: 'FEMININO',
+    O: 'OUTROS'
   };
 
   static fromJson(jsonData: any): Pessoa {
